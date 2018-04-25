@@ -9,3 +9,5 @@ def broadcast(targets):
 
 # This takes series of coroutines(targets) and 
 # sends received items to all of them
+# Example use:
+# f = open("input_file")

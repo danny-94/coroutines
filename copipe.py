@@ -21,6 +21,6 @@ def printer():
     while True:
         line = (yield)
         print(line)
-
-f = open('input_for_tail')
-follow(f, grep('python',printer()))
+if __name__ == "__main__":
+    f = open('input_file')
+    follow(f, grep('python',printer()))

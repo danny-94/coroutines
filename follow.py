@@ -7,6 +7,7 @@ def follow(f):
                 time.sleep(0.1)    
                 continue 
             yield line 
-# logfile = open('input_for_tail')
-# for line in follow(logfile):
-#     print(line)
+if __name__ == "__main__":
+    logfile = open('input_file')
+    for line in follow(logfile):
+        print(line)

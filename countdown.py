@@ -3,6 +3,6 @@ def countdown(n):
     while n > 0:
         yield n
         n -= 1
-
-for i in countdown(5):
-    print(i)
+if __name__ == "__main__":
+    for i in countdown(5):
+        print(i)

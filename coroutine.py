@@ -1,3 +1,4 @@
+# decorator for calling __next__ whenever coroutine is called
 def coroutine(func):
     def wrapper(*args,**kwargs):
         f = func(*args,**kwargs)
@@ -13,8 +14,9 @@ def grep(pattern):
         if pattern in line:
             print(line)
 
-# g = grep('python')
-# g.send('Yeah, but no, but yeah, but no')
-# g.send('A series of tubes"')
-# g.send('python generators rock!')
-# g.close()
+if __name__ == "__main__":
+    g = grep('python')
+    g.send('Yeah, but no, but yeah, but no')
+    g.send('A series of tubes"')
+    g.send('python generators rock!')
+    g.close()
