@@ -1,3 +1,4 @@
+from copipe import follow,printer,grep
 # Broadcast to multiple targets
 from coroutine import coroutine
 @coroutine
@@ -5,9 +6,15 @@ def broadcast(targets):
     while True:
         item = (yield)
         for target in targets:
-            item.send(target)
+            target.send(item)
 
 # This takes series of coroutines(targets) and 
 # sends received items to all of them
 # Example use:
-# f = open("input_file")
+if __name__ == "__main__":
+    f = open("input_file")
+    follow(f,broadcast([
+        grep('python',printer()),
+        grep('perl',printer()),
+        grep('java',printer())]
+    ))
